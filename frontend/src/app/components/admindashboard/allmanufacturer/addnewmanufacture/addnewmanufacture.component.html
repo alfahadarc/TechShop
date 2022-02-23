@@ -1,0 +1,48 @@
+<app-backtoadmindashboard></app-backtoadmindashboard>
+
+<legend align='center'>New Manufacturer</legend>
+<mat-card style="margin: 25px 50px;">
+
+    <form class="m-4" [formGroup]="manufacturerForm">
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Manufacturer Name</mat-label>
+                    <input matInput formControlName="manufacturerName" placeholder="provide an manufacturer name">
+                    <mat-error>manufacturer name is required</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <mat-form-field appearance="outline">
+                    <mat-label>Motto</mat-label>
+                    <textarea matInput formControlName="motto"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <mat-form-field appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput formControlName="description"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <button mat-raised-button class="btn btn-success" type="submit" [disabled]="!manufacturerForm.valid"
+                    (click)="submit()">Add This Manufacturer</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="alert alert-danger" role="alert" *ngIf="submitted && isSavedFailed">
+                    {{ errormsg }}
+                </div>
+            </div>
+        </div>
+    </form>
+</mat-card>

@@ -1,0 +1,9 @@
+.dashboard {
+  margin: 20px auto;
+  padding: 40px 30px 30px 30px;
+  border-radius: 15px;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+}
+.nav .nav-tabs .nav-link {
+  background-color: aqua;
+}

@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-header">
+        {{data.TITLE}} <span class="text-danger" *ngIf="data.CLAIMED == 1"><i class="bi bi-award">achieved</i></span>
+    </div>
+    <div class="card-body">
+
+        <div class="card-subtitle mb-2">{{data.SUMMARY}}</div>
+        <div>Points: {{data.REWARD_POINTS}}</div>
+        {{data.ACQUIRED_STEPS}}/{{data.TOTAL_STEPS}}
+        <section class="example-section">
+            <mat-progress-bar class="example-margin" color="primary" mode="determinate" [value]="value">
+            </mat-progress-bar>
+        </section>
+        <a class="btn btn-primary" *ngIf="data.CLAIMED == 0 &&  data.ACQUIRED_STEPS == data.TOTAL_STEPS"
+            (click)="claim()">Claim</a>
+    </div>
+</div>

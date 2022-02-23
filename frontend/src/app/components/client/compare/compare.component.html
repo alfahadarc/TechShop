@@ -1,0 +1,44 @@
+<button mat-raised-button title="Back To Dashboard" id="backbtn" class="m-4" (click)="goBack()">
+    <span class="material-icons"> chevron_left </span>
+    Back
+</button>
+<div class="container-fluid">
+    <!-- <button (click)="toggle()">TICK</button> -->
+    <mat-slide-toggle color="primary" [(ngModel)]="isChecked" (click)="toggle()">Show Difference</mat-slide-toggle>
+
+    <div class="row p-4">
+        <div class="col-md-6">
+            <img [src]="imgOne" alt="">
+        </div>
+        <div class="col-md-6">
+            <img [src]="imgTwo" alt="">
+        </div>
+    </div>
+    <div *ngIf="product_2_item && product_1_item">
+        <app-itemattributes [title]="'TITLE'" [val1]="product_1_item.TITLE" [val2]="product_2_item.TITLE">
+        </app-itemattributes>
+        <app-itemattributes [title]="'MANUFACTURER'" [val1]="product_1_item.MANUFACTURER_NAME"
+            [val2]="product_2_item.MANUFACTURER_NAME">
+        </app-itemattributes>
+        <app-itemattributes [title]="'CATEGORY'" [val1]="product_1_item.CATEGORY_NAME"
+            [val2]="product_2_item.CATEGORY_NAME">
+        </app-itemattributes>
+        <app-itemattributes [title]="'PRICE(৳)'" [val1]="product_1_item.PRICE" [val2]="product_2_item.PRICE">
+        </app-itemattributes>
+        <app-itemattributes [title]="'DISCOUNT(%)'" [val1]="product_1_item.DISCOUNT" [val2]="product_2_item.DISCOUNT">
+        </app-itemattributes>
+        <app-itemattributes [title]="'STOCK'" [val1]="product_1_item.STOCK" [val2]="product_2_item.STOCK">
+        </app-itemattributes>
+        <app-itemattributes [title]="'SUMMARY'" [val1]="product_1_item.SUMMARY" [val2]="product_2_item.SUMMARY">
+        </app-itemattributes>
+    </div>
+
+    <div *ngFor='let i of combinedNumeric'>
+        <app-otherattributes [Attribute]=i></app-otherattributes>
+    </div>
+    <div *ngFor='let i of combinedDescriptive'>
+        <app-otherattributes [Attribute]=i></app-otherattributes>
+    </div>
+
+
+</div>

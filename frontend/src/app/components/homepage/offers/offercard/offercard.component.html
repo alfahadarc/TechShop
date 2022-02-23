@@ -1,0 +1,12 @@
+<div class="card rounded mat-elevation-z4">
+    <div class="card-head">
+        <img [src]="imageToShow" class="card-img-top" alt="">
+    </div>
+    <div class="card-body">
+        <div class="card-title title-container">{{Offer.TITLE}}</div>
+        <div>{{Offer.PRICE}} ৳</div>
+        <div class="text-center">
+            <a class="btn btn-warning my-1" (click)="goIndividualOffer()">Show More</a><br>
+        </div>
+    </div>
+</div>

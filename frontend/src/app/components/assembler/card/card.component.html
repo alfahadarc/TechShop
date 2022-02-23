@@ -1,0 +1,36 @@
+<div class="card mt-4">
+    <div class="card-header">
+        <b>Order ID : {{i.ORDER_ID}}</b>
+        <br>
+        <button class="btn btn-success" (click)="seeThisOrder()">
+            See More
+        </button>
+
+    </div>
+    <div class="card-body">
+        <p>Total Price: {{i.TOTAL_PRICE|number:'.2-2'}}৳</p>
+        <p>Order Date: {{i.ORDER_DATE|date:'medium'}}</p>
+        <p>Payment Date: {{i.PAYMENT_DATE|date:'medium'}}</p>
+        <p> Status:{{i.ORDER_STATUS}}</p>
+        <a class="btn btn-primary" (click)="assemble()">Assemble</a>
+    </div>
+</div>
+
+<div class="card" *ngIf="failed">
+    <div class="card-header">
+        Request for these product to refile
+    </div>
+    <div class="card-body">
+
+        <div class="row" *ngFor="let i of refillProducts">
+            <!--  -->
+            <app-failedcard [item]="i"></app-failedcard>
+            <div class="row">
+                <div class="col-md-4">
+                    <button class="btn btn-success" (click)="stockReq(i)">Request</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

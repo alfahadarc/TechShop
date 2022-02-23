@@ -1,0 +1,19 @@
+<div class="card mt-2 mat-elevation-z4">
+    <div class="card-header text-center">
+        {{Attribute.title}} <span *ngIf="Attribute.unit" class="small">/ {{Attribute.unit}}</span>
+    </div>
+    <div class="card-body text-center" [ngStyle]="{'background-color':show === true ? 'rgb(250, 227, 196)' : 'azure' }">
+        <!-- [ngStyle]="{'background-color':toggle === true ? 'green' : 'red' }" -->
+        <div class="row">
+            <div class="col-md-5">
+                {{Attribute.value1}}
+            </div>
+            <div class="col-md-1">
+                <mat-divider vertical style="height:100%"></mat-divider>
+            </div>
+            <div class="col-md-5">
+                {{Attribute.value2}}
+            </div>
+        </div>
+    </div>
+</div>

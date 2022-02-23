@@ -1,0 +1,39 @@
+.card {
+  transition: transform 0.2s; /* Animation */
+  margin: 2px;
+  height: 250px;
+  margin-bottom: 2em;
+  width: 180px;
+  text-align: center;
+}
+
+.card:hover .card-title{
+  color:#EF4A23;
+}
+
+.card-title{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.title-container{
+  height: 50px;
+  width: 150px;
+}
+.card:hover {
+  transform: scale(
+    1.1
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.card-img-top {
+  width: 100%;
+  max-height: 100px;
+  object-fit: contain;
+  padding: 3px;
+}
+
+*{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}

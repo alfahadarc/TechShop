@@ -1,0 +1,18 @@
+.container {
+  max-width: 350px;
+  min-height: 400px;
+  margin: 80px auto;
+  padding: 40px 30px 30px 30px;
+  background-color: rgba(236, 250, 252, 0.774);
+  border-radius: 15px;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+}
+.nav .nav-tabs .nav-link {
+  background-color: aqua;
+}
+#tsparticles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}

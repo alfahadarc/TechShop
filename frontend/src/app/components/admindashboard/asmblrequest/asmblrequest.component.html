@@ -1,0 +1,41 @@
+<app-adminheader></app-adminheader>
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            Please refill these products
+        </div>
+        <div class="card-body">
+
+            <div class="row" *ngFor="let i of requestedProduct">
+                <div class="row">
+                    <div class="col-md-4">
+                        TITLE: {{i.TITLE}}
+                    </div>
+                    <div class="col-md-4">
+                        ITEM-ID: {{i.PRODUCT_ID}}
+                    </div>
+                    <div class="col-md-4">
+                        NEED: {{i.QUANTITY}}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Quantity</mat-label>
+                            <input matInput [(ngModel)]="quantity" type="number" min="1">
+                            <mat-error>please give a value or reject</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-success" (click)="resolveRequest(i)">Resolve Request</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-danger" (click)="rejectRequest(i)">Reject Request</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

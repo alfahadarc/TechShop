@@ -1,0 +1,37 @@
+<!-- <div class="form-inline my-2 my-lg-0" style="width: auto;">
+    <input name="q" id="qbox" data-toggle="dropdown" type="search" class="form-control" placeholder="Search"
+        autofocus="autofocus" autocomplete="off" aria-haspopup="true" aria-expanded="false" [(ngModel)]="searchKey"
+        (input)="searchPosts($event)" />
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" (click)=" search()">Search</button>
+        <cdk-virtual-scroll-viewport itemSize="5" class="example-viewport" *ngIf="(results$ | async) as results">
+            <div *cdkVirtualFor="let i of results; templateCacheSize: 0" class="example-item">
+                {{i.TITLE}}
+            </div>
+        </cdk-virtual-scroll-viewport>
+
+    </div>
+</div> -->
+
+<div class="row m-2">
+    <div class="col-md-6">
+        <input id="qbox" data-toggle="dropdown" type="search" class="form-control" placeholder="Search"
+            autofocus="autofocus" autocomplete="off" aria-haspopup="true" aria-expanded="false" [(ngModel)]="searchKey"
+            (input)="searchPosts($event)" />
+        <div id="search_results" class="dropdown-menu p-4" role="menu" aria-labelledby="qbox">
+            <cdk-virtual-scroll-viewport itemSize="5" class="example-viewport" *ngIf="(results$ | async) as results">
+                <div *cdkVirtualFor="let i of results; templateCacheSize: 0" class="example-item">
+
+                    <div class="d-flex justify-content-between">
+                        <span class="text-primary" (click)="goProduct(i)">{{i.TITLE}}</span>
+                        <span class="text-muted">{{i.PRICE}} ৳</span>
+                    </div>
+
+                </div>
+            </cdk-virtual-scroll-viewport>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-outline-secondary" type="button" (click)=" search()">Search</button>
+    </div>
+</div>

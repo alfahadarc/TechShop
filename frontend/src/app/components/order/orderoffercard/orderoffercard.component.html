@@ -1,0 +1,11 @@
+<mat-card class="example-card" *ngIf="offer">
+    <mat-card-title-group>
+        <img mat-card-sm-image [src]="imageToShow">
+        <mat-card-title>{{offer.TITLE}} </mat-card-title>
+    </mat-card-title-group>
+    <mat-card-content>
+        <span>PRICE: {{offer.PRICE|number:'.2-2'}}৳</span>
+
+        <br>
+    </mat-card-content>
+</mat-card>

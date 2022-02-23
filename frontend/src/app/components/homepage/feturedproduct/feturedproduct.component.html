@@ -1,0 +1,6 @@
+<h1 align="center" class="header" *ngIf="products">Featured Products</h1>
+<div class="row mb-2">
+    <div class="col-md-2" *ngFor="let i of products">
+        <app-feturedproductcard [Product]="i"></app-feturedproductcard>
+    </div>
+</div>

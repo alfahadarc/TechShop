@@ -1,0 +1,15 @@
+.card-header {
+  background-color: plum;
+  font-weight: 800;
+  font-size: 1.5em;
+}
+.small {
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+*{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}

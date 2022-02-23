@@ -1,0 +1,32 @@
+<div class="btn-group dropright">
+    <button type="button" class="btn btn-success ml-4 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false" (click)="getCompareBox()">
+        Compare Bucket<span class="badge badge-dark">{{number}}</span>
+    </button>
+    <div class="dropdown-menu">
+        <div>
+            <div class="row" *ngIf="showONE">
+                <div class="col-md-12">
+                    {{compareOne.title}}
+                </div>
+            </div>
+            <div class="row" *ngIf="showTWO">
+                <div class="col-md-12">
+                    {{compareTwo.title}}
+                </div>
+            </div>
+
+            <div *ngIf="showONE && showTWO">
+                <button type="button" class="btn btn-outline-success btn-sm" (click)='compare()'>Compare</button>
+            </div>
+            <div *ngIf="showONE || showTWO">
+                <button type="button" class="btn btn-outline-success btn-sm ml-1" (click)='clear()'>Clear</button>
+            </div>
+
+        </div>
+        <div *ngIf="!showONE && !showTWO">
+            Nothing to compare
+        </div>
+
+    </div>
+</div>

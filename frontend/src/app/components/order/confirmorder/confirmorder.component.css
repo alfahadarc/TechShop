@@ -1,0 +1,10 @@
+.example-margin {
+  margin: 8px;
+}
+mat-slider {
+  width: 300px;
+}
+*{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}

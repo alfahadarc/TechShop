@@ -1,0 +1,32 @@
+<button class=" btn btn-outline-success  btn-lg buttonZeroOutline" title="Notifications" type="button"
+    data-toggle="dropdown" aria-haspopup="true">
+    <div *ngIf="unseenCount>0;else zeroNotify">
+        <div *ngIf="unseenCount<=9;else plusNotify">
+            <span [matBadge]="unseenCount" matBadgeSize="medium" matBadgeColor="warn"><i
+                    class="bi bi-bell-fill fa-lg"></i></span>
+        </div>
+        <ng-template #plusNotify>
+            <span [matBadge]="9+'+'" matBadgeSize="small" matBadgeColor="warn"><i
+                    class="bi bi-bell-fill fa-lg"></i></span>
+        </ng-template>
+    </div>
+    <ng-template #zeroNotify>
+        <i class="bi bi-bell-fill fa-lg"></i>
+    </ng-template>
+</button>
+<div class="dropdown-menu dropdown-menu-right">
+    <span *ngIf="items.length ===0">No new notifications</span>
+    <cdk-virtual-scroll-viewport itemSize="5" class="example-viewport" *ngIf="items.length !==0">
+        <div *cdkVirtualFor="let item of items; templateCacheSize: 0" class="example-item">
+            <div class="my_card" [ngClass]="item.SEEN === 0 ? 'unseen' : 'seen'">
+                {{item.TEXT}}
+                <br>
+                <div class="d-flex justify-content-between">
+                    <span class="btn" style="color: blue;" (click)="Show(item)">Show</span>
+                    <span class="btn  delete" (click)="delete(item)">Delete</span>
+                </div>
+
+            </div>
+        </div>
+    </cdk-virtual-scroll-viewport>
+</div>

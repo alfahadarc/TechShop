@@ -1,0 +1,41 @@
+.card {
+  transition: transform 0.2s; /* Animation */
+  margin: 2px;
+  height: 250px;
+  margin-bottom: 2em;
+  width:180px;
+  text-align: center;
+}
+
+.card:hover .card-title{
+  color:#EF4A23;
+}
+
+.title-container{
+  height: 50px;
+  width: 150px;
+}
+
+.card-title{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.card:hover {
+  transform: scale(
+    1.1 
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.card-img-top {
+  width: 100px;
+  max-height: 70px;
+  object-fit: contain;
+  padding: 3px;
+}
+
+.price{
+  font-size: medium;
+  font-weight: bold;
+}
+

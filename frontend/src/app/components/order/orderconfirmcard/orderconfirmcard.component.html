@@ -1,0 +1,45 @@
+<div class="container">
+    <form [formGroup]="orderForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Address</mat-label>
+            <textarea matInput matInput formControlName="destinationAddress"></textarea>
+            <mat-error>Required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>District</mat-label>
+            <mat-select formControlName="district">
+                <mat-option *ngFor="let i of district" [value]="i.DISTRICT_ID">
+                    {{i.DISTRICT_NAME}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Sub District</mat-label>
+            <mat-select formControlName="destinationSubDistrict">
+                <mat-option *ngFor="let i of subdistrict" [value]="i.SUB_DISTRICT_ID">
+                    {{i.SUB_DISTRICT_NAME}}
+                </mat-option>
+            </mat-select>
+            <mat-error>Required</mat-error>
+        </mat-form-field>
+
+    </form>
+    <mat-card class="example-card">
+        <mat-card-content>
+            <div class="row">
+                <div class="col-md-6">
+                    SHIPPING COST
+                </div>
+                <div class="col-md-6">
+                    {{shipingcost}} ৳
+                </div>
+            </div>
+
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button class="btn-success" (click)="submit()" [disabled]="!orderForm.valid">placeorder</button>
+
+        </mat-card-actions>
+    </mat-card>
+</div>

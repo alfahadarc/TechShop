@@ -1,0 +1,22 @@
+<div class="card" style="width: 30rem;">
+    <div class="card-body">
+        <div class="product_name">{{Offer.TITLE}}</div>
+
+        <div> <span class="product_price">{{Offer.PRICE}} ৳</span> </div>
+        <hr class="singleline">
+        <div> <span class="product_info"></span>{{Offer.SUMMARY}} </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 ml-3">
+            <div class="form-check-inline m-3">
+                <button class="btn " (click)="addToCart()"
+                    [ngClass]="update === true ? 'btn-success' : 'btn-outline-success'">{{btnLabel}}</button>
+                <button type="button" class="btn ml-4"
+                    [ngClass]="inWishList == true ? 'btn-danger' : 'btn-outline-danger'" (click)="addToWishList()">
+                    <i class="bi bi-heart"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>

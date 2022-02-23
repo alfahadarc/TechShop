@@ -1,0 +1,37 @@
+<div align='center'>
+    <button mat-raised-button color="primary2" class='m-2' (click)="addnewPerson()">Add A New Person</button>
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="USERNAME">
+        <th mat-header-cell *matHeaderCellDef> Username </th>
+        <td mat-cell *matCellDef="let element">
+            {{element.USER_NAME}}
+        </td>
+    </ng-container>
+    <ng-container matColumnDef="EMAIL">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.EMAIL}} </td>
+    </ng-container>
+    <ng-container matColumnDef="FIRST_NAME">
+        <th mat-header-cell *matHeaderCellDef> First Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.FIRST_NAME}} </td>
+    </ng-container>
+    <ng-container matColumnDef="USER_ROLE">
+        <th mat-header-cell *matHeaderCellDef> Role </th>
+        <td mat-cell *matCellDef="let element"> {{element.USER_ROLE}} </td>
+    </ng-container>
+
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<div *ngIf="isLoading" style="display: flex; justify-content: center; align-items: center; background: white;">
+    <mat-progress-spinner color="primary" mode="indeterminate">
+    </mat-progress-spinner>
+</div>
+<mat-paginator [pageSizeOptions]="[ 10, 15, 20]" showFirstLastButtons></mat-paginator>

@@ -1,0 +1,31 @@
+<app-backtoadmindashboard></app-backtoadmindashboard>
+
+<legend align='center'>Update Category</legend>
+<mat-card style="margin: 25px 50px;">
+    <form class="m-4" [formGroup]="categoryForm">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-form-field appearance="outline">
+                    <mat-label>Category Name</mat-label>
+                    <input matInput formControlName="categoryName" placeholder="provide an category name">
+                    <mat-error>category name is required</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <mat-form-field appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput formControlName="description"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <button mat-raised-button class="btn btn-success" type="submit" [disabled]="!categoryForm.valid"
+                    (click)="update()">Update This Category</button>
+            </div>
+        </div>
+    </form>
+</mat-card>

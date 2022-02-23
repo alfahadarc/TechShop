@@ -1,0 +1,32 @@
+<app-clientheader></app-clientheader>
+<app-searchbox></app-searchbox>
+
+
+<div class="container">
+    <div class="card mt-4" style="width: 18rem;" *ngIf="!found">
+        <div class="card-body">
+            <h1>Nothing found</h1>
+        </div>
+    </div>
+    <div *ngIf="foundProduct" class="mt-4">
+
+        <div class="row">
+            <div class="col-md-3" *ngFor="let item of products">
+                <app-feturedproductcard [Product]="item"></app-feturedproductcard>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="foundOffer" class="mt-4">
+        <h1>Offers</h1>
+        <div class="row">
+            <div class="col-md-2" *ngFor="let item of offers">
+                <app-offercard [Offer]="item"></app-offercard>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>

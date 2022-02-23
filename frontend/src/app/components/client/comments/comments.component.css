@@ -1,0 +1,101 @@
+.example-tree-invisible {
+  display: none;
+}
+.example-tree{
+  background-color:#e4eaf0;
+}
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+/*
+   * This padding sets alignment of the nested nodes.
+   */
+.example-tree .mat-nested-tree-node div[role="group"] {
+  padding-left: 40px;
+}
+
+/*
+   * Padding for leaf nodes.
+   * Leaf nodes need to have padding so as to align with other non-leaf nodes
+   * under the same parent.
+   */
+.example-tree div[role="group"] > .mat-tree-node {
+  /* padding-left: 40px; */
+  width: 100%;
+}
+
+.example-tree {
+  width: 100%;
+}
+.login {
+  color: green;
+}
+.login:hover {
+  cursor: pointer;
+}
+.comentor {
+  font-weight: 800;
+  font-size: x-small;
+}
+.delete {
+  color: red;
+}
+.delete:hover {
+  cursor: pointer;
+}
+.reply {
+  color: blue;
+}
+.reply:hover {
+  cursor: pointer;
+}
+
+.card-header{
+  background-color: #d1b3ff;
+  font-weight:bold;
+  font-size:medium;
+}
+
+.comment-date{
+  color:darkgreen;
+  font-weight: 600;
+  font-size:medium;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.mat-tree-node{
+  border-left:4px solid green;
+  /* height:auto; */
+  position: relative;
+  /* left: 50%;
+  /* margin-left: -3px; */
+  top:initial;
+  margin: 10px;
+}
+
+.card{
+  width: 50%;
+}
+
+.card-body{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 800;
+  font-size: medium;
+  background-color:azure;
+}
+
+.comment-end-hr{
+  border: 4px solid green;
+  border-radius: 5px;
+  position:relative;
+  width: 50%;
+}
+.comment-container{
+  background-color: aquamarine;
+}

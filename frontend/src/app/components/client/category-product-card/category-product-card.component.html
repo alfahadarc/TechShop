@@ -1,0 +1,23 @@
+<div class="card  shadow-sm">
+    <img [src]="imageToShow" class="card-img-top" alt="...">
+    <div class="card-body">
+        <div class="clearfix mb-1">
+            <span class="float-start badge rounded-pill bg-primary" *ngIf="item.DISCOUNT">-{{item.DISCOUNT}}%</span><br>
+            <span class="badge badge-danger" *ngIf="item.IS_CONTINUED===0">
+                Not Available
+            </span>
+            <span class="float-end price-hp">{{item.PRICE}}৳</span>
+        </div>
+
+        <h5 class="text-center">{{item.TITLE}}</h5>
+        <div class="text-center">
+            <!-- routerLink="/product/{{item.ITEM_ID}}" -->
+            <a class="btn btn-warning my-1" (click)="goIndividualProduct()">Show More</a><br>
+            <button class=" btn btn-outline-success btn-sm my-1" (click)='addToCompare(item.ITEM_ID)'>compare</button>
+        </div>
+        <div class="clearfix mb-1">
+            <span class="float-start"><i class="fa fa-heart-o"></i></span>
+            <span class="float-end"><i class="fa fa-plus"></i></span>
+        </div>
+    </div>
+</div>

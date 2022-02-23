@@ -1,0 +1,50 @@
+.example-viewport {
+  height: 300px;
+  width: 350px;
+}
+
+.my_card {
+  padding: 5px;
+  border-bottom: 1px solid #f4f4f4;
+}
+.my_card:hover {
+  border-left: 6px solid #e98d66;
+  background: rgb(209, 209, 209);
+}
+.btn {
+  text-decoration: underline;
+}
+
+.delete {
+  color: red;
+}
+.seen {
+  background-color: white;
+}
+.unseen {
+  text-decoration: dashed;
+}
+
+.badge{
+  border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	display: block;
+	position: relative;
+	background: rgba(31,206,255,1);
+	border: 2px solid white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* top: -15px; */
+	/* right: -15px; */
+	transition: all .3s;
+}
+.end{
+  margin-left: 5px;
+}
+
+.buttonZeroOutline{
+  border: none;
+  box-shadow: none;
+}

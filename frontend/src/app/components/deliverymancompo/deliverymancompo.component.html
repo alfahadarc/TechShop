@@ -1,0 +1,14 @@
+<div class="container mt-4">
+    <h1 align="center">Delivery Man</h1>
+    <button type="button" class="btn btn-outline-secondary ml-4" (click)="logout()">
+        LOGOUT
+    </button>
+    <div *ngIf="pendingOrders.length == 0">
+        <span>No order to deliver</span>
+    </div>
+    <div class="row" *ngFor="let i of pendingOrders">
+        <div class="col-md-12">
+            <app-deliverycard [order]="i"></app-deliverycard>
+        </div>
+    </div>
+</div>

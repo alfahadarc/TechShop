@@ -1,0 +1,23 @@
+.example-margin {
+  margin: 0 10px;
+}
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+*{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+.card-header{
+  font-size: x-large;
+  background-color: greenyellow;
+}
+
+.card-subtitle{
+  font-size: large;
+}

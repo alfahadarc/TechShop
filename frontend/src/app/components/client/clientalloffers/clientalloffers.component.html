@@ -1,0 +1,9 @@
+<app-clientheader></app-clientheader>
+<div class="container">
+    <h1 align="center" class="offer_title">OFFERS</h1>
+    <div class="row m-2">
+        <div class="col-md-2" *ngFor="let i of offers">
+            <app-offercard [Offer]=i></app-offercard>
+        </div>
+    </div>
+</div>

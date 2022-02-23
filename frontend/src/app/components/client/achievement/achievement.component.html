@@ -1,0 +1,9 @@
+<app-clientheader></app-clientheader>
+<div class="container mt-4">
+
+    <div class="row" *ngFor="let i of Items">
+        <div class="col-md-6 mt-2">
+            <app-singlecard [data]="i"></app-singlecard>
+        </div>
+    </div>
+</div>

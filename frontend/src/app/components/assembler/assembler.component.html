@@ -1,0 +1,11 @@
+<div class="container mt-4">
+    <h1 align="center">Assesmbler</h1>
+    <button type="button" class="btn btn-outline-secondary ml-4" (click)="logout()">
+        LOGOUT
+    </button>
+    <div class="row" *ngFor="let i of  pendingOrders">
+        <div class="col-md-12">
+            <app-card [i]="i"></app-card>
+        </div>
+    </div>
+</div>

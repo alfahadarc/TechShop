@@ -1,0 +1,60 @@
+<div class="card" style="width: 30rem;">
+    <div class="card-body">
+        <div class="product_name">{{Attribute.TITLE}}</div>
+        <div class="manufacturer">{{Attribute.MANUFACTURER_NAME}}</div>
+        <div class="product-rating" *ngIf="ratting != 0">
+            <span class="badge badge-success rating">
+                <i class="fa fa-star fa-lg"></i>&nbsp;{{ratting}}
+            </span>
+            <br>
+            <span *ngIf="totalReview != 0">
+                {{totalReview}} Review(s)
+            </span>
+        </div>
+        <div> <span class="product_price">{{Attribute.PRICE|number}} ৳</span> <span *ngIf="Attribute.DISCOUNT && (!Attribute.DISCOUNT_EXPIRE_DATE || hasExpired(Attribute.DISCOUNT_EXPIRE_DATE)==false)"
+                class="product_discount"> -{{Attribute.DISCOUNT}}%
+                </span> </div>
+                <div *ngIf="Attribute.DISCOUNT_EXPIRE_DATE && hasExpired(Attribute.DISCOUNT_EXPIRE_DATE)==false" class="expiresIn">
+                    Expires In: {{Attribute.DISCOUNT_EXPIRE_DATE|date:'medium'}} 
+                </div>
+        <div *ngIf="Attribute.STOCK!== 0">
+            <p class="product_info text-success">In Stock</p>
+        </div>
+        <div *ngIf="Attribute.STOCK === 0">
+            <p class="product_info text-danger">Out of Stock</p>
+        </div>
+        <div> <span class="product_info"></span>{{Attribute.SUMMARY}} </div>
+    </div>
+</div>
+
+
+<div style="margin-top:30px">
+    <div class="row">
+        <div class="col-sm-8 mb-3">
+            <div class="form-check-inline">
+                <button class="btn btn-primary" (click)="minus()"><i class="fa fa-minus"></i></button>
+            </div>
+            <div class="form-check-inline">
+                <input type="text" class="form-control" [(ngModel)]="inputnumber" min="1">
+            </div>
+
+            <div class="form-check-inline">
+                <button class="btn btn-primary" (click)="plus()"><i class="fa fa-plus"></i></button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-8 ml-3">
+        <div class="form-check-inline">
+            <button class="btn " (click)="addToCart()"
+                [ngClass]="update === true ? 'btn-success' : 'btn-outline-success'">{{btnLabel}}</button>
+            <button type="button" class="btn ml-4" [ngClass]="inWishList === true ? 'btn-danger' : 'btn-outline-danger'"
+                (click)="addToWishList()">
+                <i class="bi bi-heart"></i>
+            </button>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<app-clientheader></app-clientheader>
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row" *ngFor="let i of products">
+                <div class="col-md-12">
+                    <app-orderproductcard [item]="i"></app-orderproductcard>
+                </div>
+            </div>
+            <div class="row" *ngFor="let i of offers">
+                <div class="col-md-12">
+                    <app-orderoffercard [item]="i"></app-orderoffercard>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <app-orderconfirmcard [allOrder]="allOrder"></app-orderconfirmcard>
+        </div>
+    </div>
+</div>

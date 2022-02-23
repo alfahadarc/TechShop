@@ -1,0 +1,42 @@
+<!-- comment form -->
+<div class="card m-2 text-center" *ngIf="!isLoggedIn">
+    <h2>Please Login To Add A Review</h2>
+    <span class="login" (click)="goLogin()">Log In</span>
+</div>
+<form class="m-4" [formGroup]="reviewForm" *ngIf=" isLoggedIn">
+    <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title">
+        <mat-error>empty title</mat-error>
+    </mat-form-field><br>
+    <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+    </mat-form-field><br>
+    <rating style="color: #0275d8;font-size: 40px;" formControlName="rating" [max]="max" [readonly]="isReadonly">
+    </rating>
+    <span class="reply m-2" (click)="clearRatring()">Clear</span>
+
+    <button mat-raised-button type="submit" class="btn btn-success ml-2" type="submit" (click)="submit()"
+        [disabled]="!reviewForm.valid">Add Review</button>
+</form>
+
+<div *ngFor="let t of reviews">
+    <div class="card">
+        <div class="card-header">
+            {{t.TITLE}} <br><br><br>
+            <small><u>{{t.USER_NAME}}</u> </small> @ {{t.REVIEW_DATE|date:'medium'}} <br><br>
+            <rating style="color: #0275d8;font-size: 40px;" [(ngModel)]="t.RATING" [max]="max" [readonly]="true">
+            </rating>
+        </div>
+        <div class="card-body">
+
+            <p>{{t.DESCRIPTION}}</p>
+            <div *ngIf="isLoggedIn">
+                <span class="delete m-2" (click)="deleteComment(t)" *ngIf="userName===t.USER_NAME">Delete</span>
+            </div>
+
+
+        </div>
+    </div>
+</div>

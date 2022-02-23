@@ -1,0 +1,21 @@
+<div class="row row-underline">
+    <div class="col-md-6"> <span class=" deal-text">Specifications</span> </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="col-md-12">
+            <tbody>
+                <div *ngFor="let v of Numericattribute">
+                    <tr class="row ">
+                        <td class="col-md-4"><span class="p_specification">{{v.TITLE}}</span> </td>
+                        <td class="col-md-8">
+                            <ul>
+                                <li>{{v.VALUE}} {{v.UNIT}}</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </div>
+            </tbody>
+        </table>
+    </div>
+</div>

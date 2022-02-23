@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-header">
+        Order Id : {{order.ORDER_ID}}
+    </div>
+    <div class="card-body">
+        <h2>Address : {{order.DESTINATION_ADDRESS}}</h2>
+        <h5 class="card-title">Ordering Date: {{order.ORDER_DATE | date :'medium'}}</h5>
+        <p class="card-text">Total Cost: <b>{{order.TOTAL_PRICE|number:'.2-2'}} ৳</b>
+            <br>
+            Current Status: <b>{{order.ORDER_STATUS}}</b>
+        </p>
+        <div *ngIf="order.ORDER_STATUS == 'PLACED'">
+            <div class="row">
+                <div class="col-md-6">
+                    <span>This product is not confirmed yet. Please confirm it</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="btn btn-primary" (click)="confirmOrder()">Confirm Order</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

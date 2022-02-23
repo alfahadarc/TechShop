@@ -1,0 +1,30 @@
+<app-clientheader></app-clientheader>
+<!-- <button mat-raised-button title="Back To Dashboard" id="backbtn" class="m-4" (click)="goBack()">
+    <span class="material-icons"> chevron_left </span>
+    Back
+</button> -->
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6" *ngIf="id">
+            <app-images [ImageID]="id"></app-images>
+        </div>
+        <div class="col-md-6" *ngIf="productItemAttribute">
+            <app-mainattributes [Attribute]="productItemAttribute"></app-mainattributes>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6" *ngIf="numericAttribute">
+            <app-numericattributes [Numericattribute]="numericAttribute"></app-numericattributes>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6" *ngIf="descriptiveAttribute">
+            <app-genericattributes [Descriptive]="descriptiveAttribute"></app-genericattributes>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <app-commentandreview [productID]="id"></app-commentandreview>
+        </div>
+    </div>
+</div>

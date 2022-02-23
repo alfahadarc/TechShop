@@ -1,0 +1,29 @@
+<app-clientheader></app-clientheader>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6" *ngIf="offerID">
+            <app-offerimage [ImageID]="offerID"></app-offerimage>
+        </div>
+        <div class="col-md-6" *ngIf="offer">
+            <app-offermainattributes [Offer]="offer"></app-offermainattributes>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="products">
+        <h1>Main Products:</h1>
+        <div class="col-md-2" *ngFor="let i of products">
+            <app-includes-card [Offer]="i"></app-includes-card>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="freeproducts">
+        <h1>Free Products:</h1>
+        <div class="col-md-2" *ngFor="let i of freeproducts">
+            <app-includes-card [Offer]="i"></app-includes-card>
+        </div>
+
+    </div>
+
+
+</div>

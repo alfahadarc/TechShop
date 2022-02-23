@@ -1,0 +1,50 @@
+<app-clientheader></app-clientheader>
+<div class="container mt-4" *ngIf="product.length !== 0">
+    <table mat-table [dataSource]="dataSource_one" class="mat-elevation-z8">
+        <ng-container matColumnDef="TITLE">
+            <th mat-header-cell *matHeaderCellDef> Product Title </th>
+            <td mat-cell *matCellDef="let element">
+
+                <button class="btn btn-outline-primary"
+                    (click)="individualProduct(element.ITEM_ID)">{{element.TITLE}}</button>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button color="warn" (click)="onDelete(element.ITEM_ID)">
+                    <mat-icon>delete_outline</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+
+<div class="container mt-4" *ngIf="this.offer.length !== 0">
+    <table mat-table [dataSource]="dataSource_two" class="mat-elevation-z8">
+        <ng-container matColumnDef="TITLE">
+            <th mat-header-cell *matHeaderCellDef> Offer Title </th>
+            <td mat-cell *matCellDef="let element">
+
+                <button class="btn btn-outline-primary"
+                    (click)="individualOffer(element.ITEM_ID)">{{element.TITLE}}</button>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button color="warn" (click)="onDelete(element.ITEM_ID)">
+                    <mat-icon>delete_outline</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

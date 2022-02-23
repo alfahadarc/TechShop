@@ -1,0 +1,21 @@
+<app-clientheader></app-clientheader>
+
+<div class="container" *ngIf="allOrders.length !== 0">
+    <section *ngIf="notdeliveredOrder.length !== 0">
+        <h2>Active orders</h2>
+        <div class="row m-2" *ngFor="let order of notdeliveredOrder">
+            <div class="col-md-6">
+                <app-allordercard [order]="order"></app-allordercard>
+            </div>
+        </div>
+    </section>
+    <section *ngIf="deliveredOrder.length !== 0">
+        <h2>Previous orders</h2>
+        <div class="row m-2" *ngFor="let order of deliveredOrder">
+            <div class="col-md-6">
+                <app-allordercard [order]="order"></app-allordercard>
+            </div>
+        </div>
+
+    </section>
+</div>

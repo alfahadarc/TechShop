@@ -1,0 +1,13 @@
+<div class="dropdown m-2">
+    <button class="btn  dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false"><i class="bi bi-list-ul"></i>
+        Category
+    </button>
+    <div class="dropdown-menu">
+        <div *ngFor="let c of category">
+            <a class="dropdown-item"
+                (click)='goToCategoryAllProductPage(c.CATEGORY_ID,c.CATEGORY_NAME)'>{{c.CATEGORY_NAME}}</a>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<mat-card class="example-card" *ngIf="product">
+    <mat-card-title-group>
+        <img mat-card-sm-image [src]="imageToShow">
+        <mat-card-title>{{product.TITLE}} </mat-card-title>
+    </mat-card-title-group>
+    <mat-card-content>
+        <span *ngIf="product.DISCOUNT === 0 || product.DISCOUNT=== null">{{product.PRICE|number:'.2-2'}}৳</span>
+        <span *ngIf="product.DISCOUNT !== 0 && product.DISCOUNT!== null"><del>{{product.PRICE|number:'.2-2'}}</del>
+            ৳</span>
+        <br>
+        <span *ngIf="product.DISCOUNT !==0 && product.DISCOUNT!==null"><b>{{product.DISCOUNTED_PRICE|number:'.2-2'}}
+                ৳</b> with <b>{{product.DISCOUNT}}% Discount</b>
+        </span> <br>
+
+        QUANTITY: {{item.QUANTITY}} <br>
+        <span>
+            Total: {{totalPrice|number:'.2-2'}}
+        </span>
+    </mat-card-content>
+</mat-card>

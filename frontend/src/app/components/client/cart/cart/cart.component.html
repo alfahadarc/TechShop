@@ -1,0 +1,55 @@
+<app-clientheader></app-clientheader>
+
+
+<div class="container mt-4" style="width: 70%;" *ngIf="itemsnumber!== 0">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="TITLE">
+            <th mat-header-cell *matHeaderCellDef> Product Title </th>
+            <td mat-cell *matCellDef="let element">
+
+                <button class="btn btn-link" (click)="individualProduct(element)">{{element.TITLE}}</button>
+            </td>
+        </ng-container>
+
+
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="QUANTITY">
+            <th mat-header-cell *matHeaderCellDef> Quantity </th>
+            <td mat-cell *matCellDef="let element"> {{element.QUANTITY}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button color="warn" (click)="onDelete(element.ITEM_ID)">
+                    <mat-icon>delete_outline</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <div *ngIf="isLoading" style="display: flex; justify-content: center; align-items: center; background: white;">
+        <mat-progress-spinner color="primary" mode="indeterminate">
+        </mat-progress-spinner>
+    </div>
+</div>
+
+
+<div class="container mt-4" *ngIf="itemsnumber!== 0">
+    <div class="row" align="center">
+        <div class="col-md-12">
+            <button class="btn btn-success" (click)="goPlaceOrder()">PROCEED</button>
+        </div>
+    </div>
+</div>
+<!-- 
+(click)="submit() -->
+<!-- (click)="goPlaceOrder()" -->

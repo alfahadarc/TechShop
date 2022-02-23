@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-md-4">
+        ITEM-ID: {{item.ITEM_ID}}
+    </div>
+    <div class="col-md-4">
+        CURRENT STOCK: {{item.STOCK}}
+    </div>
+    <div class="col-md-4">
+        NEED: {{item.NEED}}
+    </div>
+</div>
+<div class="row" *ngIf="alreadyhas">
+    <div class="col-md-6">
+        <span>This product has a pending request for {{quantity}} quantity</span>
+    </div>
+</div>

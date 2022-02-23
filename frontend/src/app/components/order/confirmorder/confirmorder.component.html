@@ -1,0 +1,75 @@
+<app-clientheader></app-clientheader>
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row m-2" *ngFor="let product of products">
+                <div class="col-md-12">
+                    <app-confirm-order-product-card [product]="product"></app-confirm-order-product-card>
+                </div>
+            </div>
+            <div class="row m-2" *ngFor="let offer of offers">
+                <div class="col-md-12">
+                    <app-confirmorderoffercard [offer]="offer"></app-confirmorderoffercard>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" *ngIf="order">
+            <div class="card p-4">
+                SHIPPING COST: {{order.DELIVERY_COST}} ৳ <br>
+                DATE: {{order.ORDER_DATE | date: 'medium'}} <br>
+                TOTAL-PRICE: {{order.TOTAL_PRICE}} ৳ <br>
+                AMOUNT TO PAY: {{order.DELIVERY_COST+order.TOTAL_PRICE}} ৳
+                <br>
+                <br>
+
+                <div *ngIf="order.HAS_REDEEMED == 0 && rewardPoint != 0">
+                    <hr>
+                    <div class="row" *ngIf="rewardPoint != 0">
+                        <div class="col-md-6">
+                            <span>You have {{rewardPoint}} Reward Points</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span>You can redeem maximum {{maxRedeemTk }} ৳</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <mat-form-field class="example-margin" appearance="fill">
+                                <mat-label>Points</mat-label>
+                                <input matInput type="number" [(ngModel)]="redeemValue">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span>redeemed money {{ redeemValue / 100}} ৳</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <mat-slider class="example-margin" [max]="maxOfSlide" min=0 step=1 [(ngModel)]="redeemValue"
+                                vertical=false aria-labelledby="example-name-label">
+                            </mat-slider>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-checkbox [(ngModel)]="redeemCheckBox">Redeem Points</mat-checkbox>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <button class="btn btn-success" (click)="confirmPayment()">Confirm Order</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-danger" (click)="cancelOrder()">Cancel Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

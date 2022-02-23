@@ -1,0 +1,8 @@
+.top {
+  position: absolute;
+  top: 20%;
+}
+.right {
+  position: absolute;
+  margin-left: 50vw;
+}

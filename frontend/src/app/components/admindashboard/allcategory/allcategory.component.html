@@ -1,0 +1,48 @@
+<div align='center'>
+    <button mat-raised-button color="primary2" class='m-2' (click)='goAddCategory()'>Add A New Category</button>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Image Column -->
+    <ng-container matColumnDef="CATEGORY_ID">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let element"> </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="CATEGORY_NAME">
+        <th mat-header-cell *matHeaderCellDef> Category Name </th>
+        <td mat-cell *matCellDef="let element">
+            {{element.CATEGORY_NAME}}
+        </td>
+    </ng-container>
+
+
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="DESCRIPTION">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let element"> {{element.DESCRIPTION}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row">
+            <button mat-icon-button (click)="onEdit(row)">
+                <mat-icon>launch</mat-icon>
+            </button>
+            <button mat-icon-button color="warn">
+                <mat-icon>delete_outline</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<div *ngIf="isLoading" style="display: flex; justify-content: center; align-items: center; background: white;">
+    <mat-progress-spinner color="primary" mode="indeterminate">
+    </mat-progress-spinner>
+</div>
+<mat-paginator [pageSizeOptions]="[ 10, 15, 20]" showFirstLastButtons></mat-paginator>

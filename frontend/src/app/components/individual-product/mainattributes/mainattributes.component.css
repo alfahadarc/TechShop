@@ -1,0 +1,79 @@
+.product_name {
+  font-size: 20px;
+  margin-top: 0px;
+}
+.manufacturer {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: bolder;
+  color: blue;
+  clear: left;
+}
+.badge {
+  display: inline-block;
+  padding: 0.5em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+}
+.product-rating {
+  margin-top: 10px;
+}
+.product_price {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 9px;
+  clear: left;
+}
+.product_discount {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-top: 9px;
+  clear: left;
+  margin-left: 10px;
+  color: red;
+}
+.singleline {
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.product_info {
+  color: #4d4d4d;
+  display: inline-block;
+}
+.product_description {
+  padding-left: 0px;
+}
+
+.product_quantity {
+  width: 104px;
+  height: 47px;
+  border: solid 1px #e5e5e5;
+  border-radius: 3px;
+  overflow: hidden;
+  padding-left: 8px;
+  padding-top: -4px;
+  padding-bottom: 44px;
+  float: left;
+  margin-right: 22px;
+  margin-bottom: 11px;
+}
+
+.card-body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: large;
+}
+
+.rating{
+  font-size: larger;
+}

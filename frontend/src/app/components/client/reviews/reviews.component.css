@@ -1,0 +1,24 @@
+.reply {
+  color: blue;
+}
+.reply:hover {
+  cursor: pointer;
+}
+.delete {
+  color: red;
+}
+.delete:hover {
+  cursor: pointer;
+}
+.login {
+  color: green;
+}
+.login:hover {
+  cursor: pointer;
+}
+
+*{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: large;
+}

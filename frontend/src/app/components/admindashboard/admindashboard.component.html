@@ -1,0 +1,46 @@
+<app-adminheader></app-adminheader>
+<div class="dashboard">
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-allproduct-tab" data-bs-toggle="tab"
+                data-bs-target="#nav-allproduct" type="button" role="tab" aria-controls="nav-allproduct"
+                aria-selected="true">All Products</button>
+
+            <button class="nav-link" id="nav-allcategory-tab" data-bs-toggle="tab" data-bs-target="#nav-allcategory"
+                type="button" role="tab" aria-controls="nav-allcategory" aria-selected="false">All Category</button>
+
+            <button class="nav-link" id="nav-allmanufacturer-tab" data-bs-toggle="tab"
+                data-bs-target="#nav-allmanufacturer" type="button" role="tab" aria-controls="nav-allmanufacturer"
+                aria-selected="false">All Manufacturer</button>
+
+            <button class="nav-link" id="nav-alloffer-tab" data-bs-toggle="tab" data-bs-target="#nav-alloffer"
+                type="button" role="tab" aria-controls="nav-alloffer" aria-selected="false">All Offer</button>
+
+            <button class="nav-link" id="nav-person-tab" data-bs-toggle="tab" data-bs-target="#nav-person" type="button"
+                role="tab" aria-controls="nav-person" aria-selected="false">Employee</button>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-allproduct" role="tabpanel" aria-labelledby="nav-allproduc-tab">
+            <app-allproducts></app-allproducts>
+
+        </div>
+
+        <div class="tab-pane fade" id="nav-allcategory" role="tabpanel" aria-labelledby="nav-allcategory-tab">
+            <app-allcategory></app-allcategory>
+        </div>
+
+        <div class="tab-pane fade" id="nav-allmanufacturer" role="tabpanel" aria-labelledby="nav-allmanufacturer-tab">
+            <app-allmanufacturer></app-allmanufacturer>
+        </div>
+
+        <div class="tab-pane fade" id="nav-alloffer" role="tabpanel" aria-labelledby="nav-alloffer-tab">
+            <app-alloffers></app-alloffers>
+        </div>
+
+        <div class="tab-pane fade" id="nav-person" role="tabpanel" aria-labelledby="nav-person-tab">
+            <app-deliveryman></app-deliveryman>
+        </div>
+
+    </div>
+</div>

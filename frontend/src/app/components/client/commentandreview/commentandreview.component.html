@@ -1,0 +1,29 @@
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link active" id="nav-comment-tab" data-bs-toggle="tab" data-bs-target="#nav-comment"
+            type="button" role="tab" aria-controls="nav-comment" aria-selected="true">Comments</button>
+
+        <button class="nav-link" id="nav-review-tab" data-bs-toggle="tab" data-bs-target="#nav-review" type="button"
+            role="tab" aria-controls="nav-review" aria-selected="false">Reviews</button>
+
+        <button class="nav-link" id="nav-video-tab" data-bs-toggle="tab" data-bs-target="#nav-video" type="button"
+            role="tab" aria-controls="nav-video" aria-selected="false">Tutorial video</button>
+
+
+    </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-comment" role="tabpanel" aria-labelledby="nav-allproduc-tab">
+        <app-comments [productID]="productID"></app-comments>
+
+    </div>
+
+    <div class="tab-pane fade" id="nav-review" role="tabpanel" aria-labelledby="nav-review-tab">
+        <app-reviews [productID]="productID"></app-reviews>
+    </div>
+
+    <div class="tab-pane fade" id="nav-video" role="tabpanel" aria-labelledby="nav-video-tab">
+        <app-tutorialvideo [productID]="productID"></app-tutorialvideo>
+    </div>
+
+</div>

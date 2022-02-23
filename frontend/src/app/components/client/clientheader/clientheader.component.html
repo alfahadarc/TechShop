@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a href="#" class="navbar-brand">Tech<b>Shop</b></a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collection of nav links, forms, and other content for toggling -->
+    <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+        <div class="navbar-nav">
+            <button class="btn " type="button" [routerLink]="['/home']">Home</button>
+            <button class="btn " type="button" [routerLink]="['/alloffers']">Offers</button>
+            <app-category></app-category>
+
+        </div>
+
+        <div class="navbar-nav ml-auto action-buttons">
+
+            <button type="button" title="Achievements" class="btn btn-outline-primary buttonZeroOutline"
+                *ngIf="isLoggedIn" (click)="goAchievement()">
+                <i class="bi bi-trophy-fill fa-lg"></i>
+            </button>
+
+
+            <button type="button" title="Wish List" class="btn buttonZeroOutline end" [ngClass]="'btn-outline-danger'"
+                *ngIf="isLoggedIn" (click)="gotToWishList()">
+                <i class="bi bi-heart-fill fa-lg"></i>
+            </button>
+            <button type="button" title="Cart" class="btn btn-outline-info buttonZeroOutline end"
+                (click)="goToCartList()" *ngIf="isLoggedIn">
+                <div *ngIf="cartValue>0;else zeroCart">
+                    <div *ngIf="cartValue<=9;else plusCart">
+                        <span [matBadge]="cartValue" matBadgeSize="medium" matBadgeColor="primary">
+                            <i class="bi bi-cart-fill fa-lg"></i>
+                        </span>
+                    </div>
+                    <ng-template #plusCart>
+                        <span [matBadge]="9+'+'" matBadgeSize="medium" matBadgeColor="primary"><i
+                                class="bi bi-cart-fill fa-lg"></i>
+                        </span>
+                    </ng-template>
+                </div>
+                <ng-template #zeroCart>
+                    <i class="bi bi-cart-fill fa-lg"></i>
+                </ng-template>
+            </button>
+            <button type="button" class="btn btn-success end" *ngIf="!isLoggedIn" (click)="goSignupLoginPage()">
+                <i class="bi bi-person-fill fa-lg"></i>
+            </button>
+
+
+
+            <div class="end" *ngIf="isLoggedIn">
+                <app-notifications></app-notifications>
+            </div>
+
+
+            <button type="button" title="Orders" class="end btn btn-outline-warning buttonZeroOutline"
+                (click)="allorder()" *ngIf="isLoggedIn">
+                <i class="bi bi-gift-fill fa-lg"></i>
+            </button>
+
+
+            <button type="button" title="Logout" class="end btn btn-outline-dark buttonZeroOutline" (click)="logout()"
+                *ngIf="isLoggedIn">
+                <i class="bi bi-arrow-up-right-circle-fill fa-lg"></i>
+            </button>
+
+            <!--UserName-->
+            <div *ngIf="isLoggedIn">
+                <button class="btn btn-outline-dark buttonZeroOutline p-2"><span class="userName"
+                        (click)="goProfile()">{{username}}</span></button>
+            </div>
+
+
+
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,46 @@
+<div class="card mt-4">
+    <div class="card-header">
+        <b>Order ID : {{order.ORDER_ID}}</b>
+        <br>
+    </div>
+    <div class="card-body">
+        <p>Receiver Name: {{order.FULL_NAME}}</p>
+        <h2>Destination: </h2>
+        <p>Address: {{order.DESTINATION_ADDRESS}}</p>
+        <p>Sub-District: {{order.DESTINATION_SUB_DISTRICT_NAME}}</p>
+        <p>District: {{order.DESTINATION_DISTRICT_NAME}}</p>
+        <p>Total Price: {{order.TOTAL_PRICE|number:'.2-2'}}৳</p>
+        <p>Order Date: {{order.ORDER_DATE|date:'medium'}}</p>
+        <p>Payment Date: {{order.PAYMENT_DATE|date:'medium'}}</p>
+        <p> Status:{{order.ORDER_STATUS}}</p>
+
+        <form [formGroup]="deliveryForm" *ngIf="order.ORDER_STATUS=='ON_DELIVERY'">
+            <mat-form-field appearance="outline">
+                <mat-label>District</mat-label>
+                <mat-select formControlName="district">
+                    <mat-option *ngFor="let i of districts" [value]="i.DISTRICT_ID">
+                        {{i.DISTRICT_NAME}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Sub District</mat-label>
+                <mat-select formControlName="subDistrict">
+                    <mat-option *ngFor="let i of subDisticts" [value]="i.SUB_DISTRICT_ID">
+                        {{i.SUB_DISTRICT_NAME}}
+                    </mat-option>
+                </mat-select>
+                <mat-error>Required</mat-error>
+            </mat-form-field>
+        </form>
+
+        <a class="btn btn-primary" (click)="takeDelivery()" *ngIf="order.ORDER_STATUS=='ASSEMBLED'">Take This Delivery</a>
+        <a class="btn btn-primary" (click)="changeCurrentSubDistrict()" *ngIf="order.ORDER_STATUS=='ON_DELIVERY'">changeCurrentSubDistrict</a>
+        <a class="btn btn-primary ml-2" (click)="markAsDelivered()" *ngIf="order.ORDER_STATUS=='ON_DELIVERY'">Mark As Delivered</a>
+        <div *ngIf="order.ORDER_STATUS=='DELIVERED'">
+            <p>Delivered!</p>
+            <p>Delivered Date: {{order.DELIVERY_DATE}}</p>
+        </div>
+    </div>
+</div>

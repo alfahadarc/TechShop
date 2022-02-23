@@ -1,0 +1,27 @@
+<app-clientheader></app-clientheader>
+<div class="container">
+    <div *ngIf="products" align="center" class="title">{{categoryName}}</div>
+    <div>
+        <app-comparebox></app-comparebox>
+    </div>
+    <mat-radio-group class="example-radio-group" aria-label="Sort" [(ngModel)]="sortValue" (change)="sort($event)">
+        <mat-radio-button class="example-radio-button" value="low">Low To High</mat-radio-button>
+        <mat-radio-button class="example-radio-button" value="high">High To Low</mat-radio-button>
+    </mat-radio-group>
+    <div class="row">
+        <div>
+            <button class="btn btn-outline-primary btn-sm" (click)="showAll()">All</button>
+        </div>
+        <div class="col-md-2" *ngFor="let i of manufacturer">
+            <button class="btn btn-outline-primary btn-sm " (click)="filterManufacturer(i)">{{i}}</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3" *ngFor="let i of filteredProduct">
+                <app-category-product-card [item]="i"></app-category-product-card>
+            </div>
+        </div>
+    </div>
+</div>

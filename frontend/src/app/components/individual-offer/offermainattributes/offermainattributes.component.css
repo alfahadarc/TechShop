@@ -1,0 +1,42 @@
+.product_name {
+  margin-top: 0px;
+  font-size: x-large;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.5em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+}
+.product-rating {
+  margin-top: 10px;
+}
+.product_price {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 9px;
+  clear: left;
+}
+
+.singleline {
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.product_info {
+  color: #4d4d4d;
+  display: inline-block;
+}
+*{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}

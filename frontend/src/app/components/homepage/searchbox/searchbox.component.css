@@ -1,0 +1,13 @@
+.example-viewport {
+  height: 300px;
+  width: 350px;
+}
+input {
+  width: 500px;
+}
+span:hover {
+  cursor: pointer;
+}
+span {
+  color: rgb(17, 0, 255);
+}

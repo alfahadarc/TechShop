@@ -1,0 +1,51 @@
+<form class="m-4" [formGroup]="signUpForm">
+    <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="userName" placeholder="provide an username">
+        <mat-error>username is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput formControlName="password">
+        <mat-error>password is required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Confirm Password</mat-label>
+        <input type="password" matInput formControlName="confirmPassword">
+        <mat-error *ngIf="signUpForm.controls['confirmPassword'].errors?.required">confirm password is required
+        </mat-error>
+        <mat-error *ngIf="signUpForm.controls['confirmPassword'].errors?.passwordMismatch">Password doesn't match
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email">
+        <mat-error *ngIf="signUpForm.controls['email'].errors?.required">email is required</mat-error>
+        <mat-error *ngIf="signUpForm.controls['email'].errors?.email">Invalid email</mat-error>
+
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input matInput formControlName="phoneNumber">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input type="text" matInput formControlName="firstName">
+        <mat-error>First Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input type="text" matInput formControlName="lastName">
+        <mat-error>Last Name is required</mat-error>
+    </mat-form-field>
+
+
+    <button mat-raised-button type="submit" class="btn btn-success" type="submit" (click)="submit()"
+        [disabled]="!signUpForm.valid">Sign Up</button>
+
+
+</form>
