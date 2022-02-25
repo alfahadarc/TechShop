@@ -7,12 +7,23 @@
 
         npm install -g @angular/cli
 
+## Databse
+
+    1. create a user named 'c##nahian' with password 'nahian'
+    2. execute the dumpfile named 'C##NAHIAN.sql'
+
 ## Backend
 
-1.  Go to backend folder
-2.  create a '.env' file in root directory of backend and copy these below to the created file
+1.  Go to oracle2design folder
+2.  create a '.env' file in root directory of backend and copy these contents to the created file
 
-        code
+        DB_USER=c##nahian
+        DB_PASSWORD=nahian
+        SECRET=lalalandkeysecret
+        PRODUCT_MAIN_IMAGE_PATH=./images/productMainImages
+        PRODUCT_TUTORIAL_VIDEO_PATH=./videos/productTutorialVideos
+        OFFER_MAIN_IMAGE_PATH=./images/offerMainImages
+        MANUFACTURER_IMAGE_PATH= ./images/manufacturerImages
 
 3.  Run
 
