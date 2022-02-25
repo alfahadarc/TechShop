@@ -31,7 +31,7 @@
 
 4.  Run
 
-        npm install
+        npm start
 
 ## Frontend
 
