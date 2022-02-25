@@ -1,7 +1,6 @@
 .vscode
 .env
 backend/node_modules
-backend/videos
 .VSCodeCounter
 
 # frontend
