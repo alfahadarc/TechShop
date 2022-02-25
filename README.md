@@ -42,7 +42,7 @@
 
 3.  Run
 
-        npm serve --o
+        ng serve --o
 
     it will serve the app and automatically open it in a browser
     
