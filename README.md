@@ -14,8 +14,8 @@
 
 ## Backend
 
-1.  Go to oracle2design folder
-2.  create a '.env' file in root directory of backend and copy these contents to the created file
+1.  Go to 'oracle2design' folder
+2.  create a '.env' file in root directory of backend(oracle2design) and copy these contents to the created file
 
         DB_USER=c##nahian
         DB_PASSWORD=nahian
