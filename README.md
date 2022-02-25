@@ -46,6 +46,14 @@
 
     it will serve the app and automatically open it in a browser
 
+## To create new admin, delivery man or assembler
+
+        log in as admin
+        username: Admin
+        password: Admin@123
+
+        here you can find a tab to add new employee
+
 ### Caution
 
     make sure the localhost port 3001 and 4200 is free before serving frontend and backend
