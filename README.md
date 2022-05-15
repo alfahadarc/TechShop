@@ -10,7 +10,7 @@
 ## Database
 
     1. create a user named 'c##nahian' with password 'nahian'
-    2. execute the sql file named 'C##NAHIAN.sql' given in the root directory
+    2. execute the sql file named 'SQL_DUMP.sql' given in the root directory
 
 ## Backend
 
